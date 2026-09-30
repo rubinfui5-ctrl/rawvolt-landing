@@ -80,6 +80,16 @@
   blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4.5vw,38px);font-weight:500;line-height:1.4;max-width:760px;margin:0 auto}
   blockquote .gold{color:var(--gold)}
   .quote-attrib{margin-top:18px;font-size:10px;letter-spacing:.3em;color:var(--dim);font-weight:700}
+  /* HERO VIDEO */
+  .hero-flex{display:flex;gap:44px;align-items:center}
+  .hero-copy{flex:1;min-width:0}
+  .hero-video{flex:0 0 auto}
+  .hero-video video{width:min(290px,68vw);aspect-ratio:9/16;object-fit:cover;border-radius:18px;border:1px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,.65),0 0 40px rgba(0,102,255,.14);display:block;background:#0d0e10}
+  /* FILM SECTION */
+  .film-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+  .film video{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:14px;border:1px solid var(--border);background:#0d0e10;display:block;transition:border-color .25s}
+  .film:hover video{border-color:rgba(255,215,0,.35)}
+  .film figcaption{margin-top:12px;font-size:10px;letter-spacing:.3em;font-weight:700;color:var(--dim);text-align:center}
   /* FOOTER */
   footer{padding:60px 0 40px;border-top:1px solid var(--border)}
   .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px}
@@ -91,6 +101,8 @@
     .nav-links{display:none}
     section{padding:60px 0}
     .hero{padding:70px 0 60px}
+    .hero-flex{flex-direction:column-reverse;gap:32px}
+    .hero-video video{width:min(240px,72vw)}
   }
 </style>
 </head>
@@ -103,6 +115,7 @@
     </div>
     <div class="nav-links">
       <a href="#drop">The Drop</a>
+      <a href="#film">On Film</a>
       <a href="#apps">Free Apps</a>
       <a href="#protocols">Protocols</a>
       <a href="https://www.instagram.com/rubinfuimaono/" target="_blank">Founder</a>
@@ -114,15 +127,22 @@
 <header class="hero">
   <div class="hero-bg"></div>
   <div class="shell">
-    <div class="eyebrow">LUXURY STREETWEAR — PERTH, AU</div>
-    <h1>Locked like <span class="gold">your word.</span></h1>
-    <p class="hero-sub">
-      RAWVOLT is a standard, not a look. 320gsm Scuba Ponte. YKK Excella Gold hardware.
-      Built for men and women who keep their word — in the gym, on the street, everywhere.
-    </p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary" href="#drop">SHOP THE DROP →</a>
-      <a class="btn btn-ghost" href="#apps">GET THE FREE APPS</a>
+    <div class="hero-flex">
+      <div class="hero-copy">
+        <div class="eyebrow">LUXURY STREETWEAR — PERTH, AU</div>
+        <h1>Locked like <span class="gold">your word.</span></h1>
+        <p class="hero-sub">
+          RAWVOLT is a standard, not a look. 320gsm Scuba Ponte. YKK Excella Gold hardware.
+          Built for men and women who keep their word — in the gym, on the street, everywhere.
+        </p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#drop">SHOP THE DROP →</a>
+          <a class="btn btn-ghost" href="#apps">GET THE FREE APPS</a>
+        </div>
+      </div>
+      <div class="hero-video">
+        <video src="assets/videos/hero-reel.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
     </div>
   </div>
 </header>
@@ -185,9 +205,22 @@
   </div>
 </section>
 
+<section id="film" style="background:#0a0b0d;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="shell">
+    <div class="sec-label">02 — ON FILM</div>
+    <h2>The drop, on film.</h2>
+    <p class="sec-sub">Shot in-house, cut by our studio. Stone, Navy, and the Set — as real as it gets.</p>
+    <div class="film-grid">
+      <figure class="film"><video src="assets/videos/stone.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption>STONE</figcaption></figure>
+      <figure class="film"><video src="assets/videos/navy.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption>NAVY</figcaption></figure>
+      <figure class="film"><video src="assets/videos/set.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption>THE SET</figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <section id="apps" style="background:#0a0b0d;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="shell">
-    <div class="sec-label">02 — FREE APPS</div>
+    <div class="sec-label">03 — FREE APPS</div>
     <h2>Discipline, free.</h2>
     <p class="sec-sub">The founder's training and habit systems — free. Your word is the only currency these apps accept.</p>
     <div class="apps-grid">
@@ -233,7 +266,7 @@
 
 <section id="protocols">
   <div class="shell">
-    <div class="sec-label">03 — PROTOCOLS</div>
+    <div class="sec-label">04 — PROTOCOLS</div>
     <h2>Training protocols.</h2>
     <p class="sec-sub">Structured discipline systems built on commitment, not motivation. Use code <b style="color:var(--gold)">RAWVOLT20</b> for 20% off.</p>
     <div class="apps-grid">
