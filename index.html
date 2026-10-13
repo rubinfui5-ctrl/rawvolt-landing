@@ -159,6 +159,7 @@
     <div class="sec-label">01 — THE DROP</div>
     <h2>RAWVOLT Hoodie</h2>
     <p class="sec-sub">Two colorways. One standard. Heavyweight Scuba Ponte with a matte DWR finish and gold hardware that doesn't apologize.</p>
+    <div style="display:inline-block;background:rgba(242,193,78,.12);border:1px solid var(--gold);color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.25em;padding:8px 14px;border-radius:999px;margin-bottom:20px">⚠ DROP 001 — 150 UNITS ONLY</div>
     <div class="grid">
       <div class="card">
         <div class="card-img"><img src="assets/hoodie-stone.jpg" alt="RAWVOLT Hoodie — Stone colorway" onerror="this.parentNode.innerHTML='<div style=\'padding:60px;color:#8A8F98;font-family:Cormorant Garamond,serif;font-size:30px\'>STONE</div>'"></div>
@@ -205,9 +206,40 @@
   </div>
 </section>
 
+<section id="first150" style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:#0a0b0d">
+  <div class="shell">
+    <div class="sec-label">02 — JOIN THE FIRST 150</div>
+    <h2>First run. 150 units. Then it's gone.</h2>
+    <p class="sec-sub">The first production run is capped at <b style="color:var(--gold)">150 units</b>. Get on the list — <b style="color:var(--gold)">10% off your first order</b>, first access to the drop before it goes public, and zero spam. Your word gets locked, ours does too.</p>
+    <form id="first150-form" style="display:flex;gap:12px;flex-wrap:wrap;max-width:560px;margin-top:24px">
+      <input type="email" id="first150-email" required placeholder="your@email.com" style="flex:1;min-width:220px;background:#0e1013;border:1px solid var(--border);border-radius:10px;padding:14px 16px;color:#fff;font-size:1rem;outline:none">
+      <button type="submit" class="btn btn-primary" style="border:none;cursor:pointer;padding:14px 28px">LOCK MY SPOT →</button>
+    </form>
+    <div id="first150-done" style="display:none;color:var(--gold);font-weight:600;margin-top:16px"></div>
+    <p style="color:var(--muted);font-size:.78rem;margin-top:14px;letter-spacing:.05em">10% CODE ARRIVES BY EMAIL — NO SPAM, WORD IS BOND</p>
+  </div>
+</section>
+<script>
+(function(){
+  var f=document.getElementById('first150-form');
+  if(!f)return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var em=document.getElementById('first150-email').value.trim();
+    if(!em)return;
+    var sub=encodeURIComponent('FIRST 150 LIST — '+em);
+    var body=encodeURIComponent('Email: '+em+'\nSource: rawvolt landing (first150 section)\nRequested: 10% first-order code + first access to Drop 001.');
+    window.location.href='mailto:thatsonme.thatsonyou@gmail.com?subject='+sub+'&body='+body;
+    f.style.display='none';
+    var d=document.getElementById('first150-done');
+    d.style.display='block';
+    d.textContent='LOCKED. Your mail app just opened — hit send and the 10% code is yours. Check spam if it doesn\'t land within a day.';
+  });
+})();
+</script>
 <section id="film" style="background:#0a0b0d;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="shell">
-    <div class="sec-label">02 — ON FILM</div>
+    <div class="sec-label">03 — ON FILM</div>
     <h2>The drop, on film.</h2>
     <p class="sec-sub">Shot in-house, cut by our studio. Stone, Navy, and the Set — as real as it gets.</p>
     <div class="film-grid">
@@ -220,7 +252,7 @@
 
 <section id="apps" style="background:#0a0b0d;border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
   <div class="shell">
-    <div class="sec-label">03 — FREE APPS</div>
+    <div class="sec-label">04 — FREE APPS</div>
     <h2>Discipline, free.</h2>
     <p class="sec-sub">The founder's training and habit systems — free. Your word is the only currency these apps accept.</p>
     <div class="apps-grid">
@@ -293,7 +325,7 @@
 </script>
 <section id="protocols">
   <div class="shell">
-    <div class="sec-label">04 — PROTOCOLS</div>
+    <div class="sec-label">05 — PROTOCOLS</div>
     <h2>Training protocols.</h2>
     <p class="sec-sub">Structured discipline systems built on commitment, not motivation. Use code <b style="color:var(--gold)">RAWVOLT20</b> for 20% off.</p>
     <div class="apps-grid">
